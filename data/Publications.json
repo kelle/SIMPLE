@@ -3688,5 +3688,11 @@
         "bibcode": "2018ApJS..236...28T",
         "doi": "10.3847/1538-4365/aabad3",
         "description": "New Y and T Dwarfs from WISE Identified by Methane Imaging"
+    },
+    {
+        "name": "Manj19",
+        "bibcode": "2019AJ....157..101M",
+        "doi": "10.3847/1538-3881/aaf88f",
+        "description": "Cloud Atlas: HST nir spectral library"
     }
 ]

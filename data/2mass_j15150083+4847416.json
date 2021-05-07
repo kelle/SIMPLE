@@ -70,5 +70,16 @@
             "comments": null,
             "reference": "Cutr12"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "L6",
+            "spectral_type_code": 76.0,
+            "spectral_type_error": null,
+            "regime": "nir",
+            "adopted": false,
+            "comments": null,
+            "reference": "Manj19"
+        }
     ]
 }

@@ -15,5 +15,16 @@
         {
             "other_name": "2MASSI J0421072-630602"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "L5",
+            "spectral_type_code": 75.0,
+            "spectral_type_error": null,
+            "regime": "nir",
+            "adopted": false,
+            "comments": null,
+            "reference": "Manj19"
+        }
     ]
 }

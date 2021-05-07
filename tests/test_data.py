@@ -4,7 +4,7 @@ import os
 import pytest
 from simple.schema import *
 from astrodbkit2.astrodb import create_database, Database
-
+from sqlalchemy import *
 
 DB_NAME = 'temp.db'
 DB_PATH = 'data'
@@ -45,6 +45,44 @@ def reference_verifier(t, name, bibcode, doi):
 
 # Individual ingest tests
 # -----------------------------------------------------------------------------------------
+def test_Manj19_data(db):
+    """
+    Tests for data ingested from Manjavacas+2019
+
+    Data file(s):
+        ATLAS_table.vot
+
+    Ingest script(s):
+        ingest_ATLAS_sources.py
+        ingest_ATLAS_spectral_types.py
+    """
+
+    pub = 'Manj19'
+
+    # Test total spectral types added
+    n_Manj19_types = db.query(db.SpectralTypes).filter(db.SpectralTypes.c.reference == pub).count()
+    assert n_Manj19_types == 40, f'found {n_Manj19_types} sources for {pub}'
+
+    # Test number of L types added
+    n_Manj19_Ltypes = db.query(db.SpectralTypes).filter(and_(db.SpectralTypes.c.spectral_type_code >= 70,
+                                                             db.SpectralTypes.c.spectral_type_code < 80,
+                                                             db.SpectralTypes.c.reference == pub)).count()
+    assert n_Manj19_Ltypes == 19, f'found {n_Manj19_Ltypes} L type dwarfs for {pub}'
+
+    # Test number of T types added
+    n_Manj19_Ttypes = db.query(db.SpectralTypes).filter(and_(db.SpectralTypes.c.spectral_type_code >= 80,
+                                                             db.SpectralTypes.c.spectral_type_code < 90,
+                                                             db.SpectralTypes.c.reference == pub)).count()
+    assert n_Manj19_Ttypes == 21, f'found {n_Manj19_Ttypes} T type dwarfs for {pub}'
+
+def test_Manj19_pub(db):
+    pub = 'Manj19'
+
+    # Check DOI and Bibcode values are correctly set for new publications added
+    manj19_pub = db.query(db.Publications).filter(db.Publications.c.name == pub).astropy()
+    reference_verifier(manj19_pub, 'Manj19', '2019AJ....157..101M', '10.3847/1538-3881/aaf88f')
+
+
 def test_Kirk19_ingest(db):
     """
     Tests for Y-dwarf data ingested from Kirkpartick+2019

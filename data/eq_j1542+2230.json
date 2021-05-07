@@ -24,5 +24,16 @@
         {
             "other_name": "WISEA J154214.00+223005.2"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "T9.5",
+            "spectral_type_code": 89.5,
+            "spectral_type_error": null,
+            "regime": "unknown",
+            "adopted": false,
+            "comments": "From ATLAS Table Manjavacas etal. 2019",
+            "reference": "Missing"
+        }
     ]
 }

@@ -18,5 +18,16 @@
         {
             "other_name": "SDSS J075840.33+324723.4"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "T0+T3.5",
+            "spectral_type_code": 80.0,
+            "spectral_type_error": null,
+            "regime": "unknown",
+            "adopted": false,
+            "comments": "From ATLAS Table Manjavacas etal. 2019",
+            "reference": "Missing"
+        }
     ]
 }

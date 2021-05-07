@@ -91,7 +91,14 @@ def convert_spt_string_to_code(spectral_types, verbose=False):
 
     spectral_type_codes = []
     for spt in spectral_types:
+        verboseprint("Trying to convert:", spt)
         spt_code = np.nan
+
+        if spt == "":
+            spectral_type_codes.append(spt_code)
+            verboseprint("Appended NAN")
+            continue
+
         # identify main spectral class, loop over any prefix text to identify MLTY
         for i, item in enumerate(spt):
             if item == 'M':
@@ -107,6 +114,7 @@ def convert_spt_string_to_code(spectral_types, verbose=False):
                 spt_code = 90
                 break
         # find integer or decimal subclass and add to spt_code
+
         spt_code += float(re.findall('\d*\.?\d+', spt[i + 1:])[0])
         spectral_type_codes.append(spt_code)
         verboseprint(spt, spt_code)

@@ -15,5 +15,16 @@
         {
             "other_name": "2MASS J16291840+0335371"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "T2",
+            "spectral_type_code": 82.0,
+            "spectral_type_error": null,
+            "regime": "nir",
+            "adopted": false,
+            "comments": null,
+            "reference": "Manj19"
+        }
     ]
 }

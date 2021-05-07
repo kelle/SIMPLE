@@ -21,5 +21,16 @@
         {
             "other_name": "WISEP J013657.45+093347.0"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "T2.5",
+            "spectral_type_code": 82.5,
+            "spectral_type_error": null,
+            "regime": "nir",
+            "adopted": false,
+            "comments": null,
+            "reference": "Manj19"
+        }
     ]
 }

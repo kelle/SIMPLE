@@ -18,5 +18,16 @@
         {
             "other_name": "WISEA J040443.50-642030.0"
         }
+    ],
+    "SpectralTypes": [
+        {
+            "spectral_type_string": "T9",
+            "spectral_type_code": 89.0,
+            "spectral_type_error": null,
+            "regime": "unknown",
+            "adopted": false,
+            "comments": "From ATLAS Table Manjavacas etal. 2019",
+            "reference": "Missing"
+        }
     ]
 }
